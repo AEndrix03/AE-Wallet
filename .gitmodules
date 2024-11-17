@@ -1,0 +1,6 @@
+[submodule "ae-wallet-fe"]
+	path = ae-wallet-fe
+	url = https://github.com/AEndrix03/AE-Wallet-FE
+[submodule "ae-wallet-be"]
+	path = ae-wallet-be
+	url = https://github.com/AEndrix03/AE-Wallet-BE
