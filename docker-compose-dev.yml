@@ -3,7 +3,7 @@ services:
     image: ae-wallet-be
     build:
       context: ./ae-wallet-be
-      dockerfile: Dockerfile
+      dockerfile: Dockerfile.dev
     container_name: ae-wallet-be
     ports:
       - "8443:8443"
@@ -16,9 +16,9 @@ services:
     image: ae-wallet-fe
     build:
       context: ./ae-wallet-fe
-      dockerfile: Dockerfile
+      dockerfile: Dockerfile.dev
     ports:
-      - "8080:80"
+      - "4200:4200"
     networks:
       - ae-wallet-fe
     
