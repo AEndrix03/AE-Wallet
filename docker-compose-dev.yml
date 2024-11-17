@@ -9,7 +9,10 @@ services:
       - "8443:8443"
       - "5005:5005"
     env_file:
-      - .env
+      - ./environment/db.env
+      - ./environment/cors.env
+      - ./environment/jwt.env
+      - ./environment/ssl.env
     networks:
       - ae-wallet-fe
   ae-wallet-fe:
