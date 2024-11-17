@@ -1,14 +1,28 @@
-version: '3.8'
 services:
-  aewallet:
-    image: ae-wallet
-    build: .
+  ae-wallet-be:
+    image: ae-wallet-be
+    build:
+      context: ./ae-wallet-be
+      dockerfile: Dockerfile
+    container_name: ae-wallet-be
     ports:
       - "8080:8080"
+      - "8443:8443"
       - "5005:5005"
-    secrets:
-      - encryption_key
-
-secrets:
-  encryption_key:
-    external: true
+    env_file:
+      - .env
+    networks:
+      - ae-wallet-fe
+  ae-wallet-fe:
+    image: ae-wallet-fe
+    build:
+      context: ./ae-wallet-fe
+      dockerfile: Dockerfile
+    ports:
+      - "81:81"
+    networks:
+      - ae-wallet-fe
+    
+networks:
+  ae-wallet-fe:
+    driver: bridge
