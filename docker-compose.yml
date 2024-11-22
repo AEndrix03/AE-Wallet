@@ -15,6 +15,7 @@ services:
       - ./environment/ssl.env
     networks:
       - ae-wallet-fe
+    restart: always
   ae-wallet-fe:
     image: ae-wallet-fe
     build:
@@ -24,6 +25,7 @@ services:
       - "8080:80"
     networks:
       - ae-wallet-fe
+    restart: always
     
 networks:
   ae-wallet-fe:
